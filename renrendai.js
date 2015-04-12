@@ -1,7 +1,8 @@
+var config = require("./renrendai_config.js");
 var minInterest = 13.1;
 var minAmount = 100;
-var _u = "";
-var _p = "";
+var _u = config.account || "";
+var _p = config.password || "";
 
 var webdriver = require('selenium-webdriver');
 var ajaxRequest = require('request');
