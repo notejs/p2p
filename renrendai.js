@@ -11,6 +11,12 @@ var driver = new webdriver.Builder().
 withCapabilities(webdriver.Capabilities.chrome()).
 build();
 
+process.on('uncaughtException', function(err){
+    // TODO: auto restart instead of driver quit.
+    console.log(err)
+    driver && driver.quit();
+});
+
 var timeouts = (new webdriver.WebDriver.Timeouts(driver))
 timeouts.setScriptTimeout(10000);
 
